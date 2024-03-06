@@ -1,0 +1,92 @@
+\begin{table}[ht]
+\caption{Ardupilot可行范围指南的例子}
+\label{tab:range_shrink_cmp}
+\centering
+\begin{threeparttable}
+\begin{tabular}{c|ccc|ccc|ccc}
+        \toprule[1.5pt]
+          \multirow{2}{*}{参数}  & \multicolumn{3}{c|}{\textit{指南1}} & \multicolumn{3}{c|}{\textit{指南2}} & \multicolumn{3}{c}{\textit{指南3}} \\
+         \cmidrule[0.8pt]{2-10}
+          ~ & {下界} & 上界 & 减少& {下界} & {上界} & 减少& {下界} & {上界} & 减少 \\
+         
+         \midrule[0.8pt]
+        
+        
+          PSC\_VELXY\_P  &  0.3 &  5.9   & -5.1\%&  0.3 & 6.0  & -3.3\%  & 0.3 & 6.0   & -3.3\%\\
+        
+          PSC\_ACCZ\_I  &  0.0 &  2.9   & -3.3\%&  0.0 & 2.4  & -20\%  & 0.0 & 2.6  & -13.3\%\\
+        
+          ATC\_RAT\_RLL\_P &   0.13 &  0.37   & -51.0\%&  0.125 & 0.375  & -48.9\%  & 0.12 & 0.38  & -46.9\%\\
+        
+          ATC\_RAT\_RLL\_I &   0.01 &  0.46   & -77.3\%&  0.015 & 0.445  & -78.3.\%  & 0.01 & 0.915  & -54.5\%\\
+        
+          ATC\_RAT\_PIT\_P &   0.05 &  0.50   & -8.1\%&  0.05 & 0.50  & -8.1\%  & 0.055 & 0.475  & -14.2\%\\
+    
+          ATC\_ANG\_YAW\_P &   3.1 &  11.9   & -2.2\%&  3.1 & 12.0  & -1.1\%  & 3.0 & 12.0 & -0.0\%\\
+        
+          WPNAV\_SPEED &   750 &  2000   & -35.8\%&  700 & 2000  & -33.3\%  & 800 & 2000  & -38.4\%\\
+         
+          ANGLE\_MAX &   1000 &  7020   & -14.0\%&  1000 & 6630  & -19.5\%  & 1000 & 6920 & -15.4\%\\
+        % 0, 26, 26; 
+        \midrule[0.8pt]
+        {$\frac{I}{V}$},{V} & 
+        \multicolumn{3}{c|}{0.0\%,26} & 
+        \multicolumn{3}{c|}{3.43\%,29} &
+         \multicolumn{3}{c}{26.9\%,52} \\
+        \bottomrule[1.5pt]
+        
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item[*] 
+\dquote{减少}是相对于原始范围计算的（越小意味着适应性越高），
+\dquote{V} 是范围指南涵盖的已验证配置的数量，
+\dquote{$\frac{I}{V}$} 是范围指导中错误配置的比例（越小意味着稳定性越高）。
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+\begin{table}[ht]
+\caption{PX4可行范围指南的例子}
+\label{tab:range_shrink_px4}
+\centering
+\begin{threeparttable}
+\begin{tabular}{c|ccc|ccc|ccc}
+        \toprule[1.5pt]
+          \multirow{2}{*}{参数}  & \multicolumn{3}{c|}{\textit{指南1}} & \multicolumn{3}{c|}{\textit{指南2}} & \multicolumn{3}{c}{\textit{指南3}} \\
+         \cmidrule[0.8pt]{2-10}
+          ~ & {下界} & {上界} & 减少& {下界} & {上界} & 减少& {下界} & {上界} & 减少 \\
+         
+        \midrule[0.8pt]
+        
+         MC\_ROLL\_P  &  1.0 &  12   & -8.3\%   & 1.4 & 11.9   & -14.1\% &  1.2 & 12.0  & -0.1\%\\
+        
+          MC\_PITCH\_P  &  0.5 &  12   & -4.1\%   & 3.1 & 12.0  & -4.1\% &  1.8 & 11.9  & -15.8\%\\
+        
+          MC\_YAW\_P &   1.0 &  5.0   & -20.0\%  & 0.7 & 4.8  & -2.0\% &  0.0 & 4.9  & -2.0\%\\
+        
+          MPC\_Z\_P &   0.5 &  1.4   & -40.0\%  & 0.0 & 1.4  & -6.7\% &  0.2 & 1.4  & -20.0\%\\
+        
+          MC\_ROLLRATE\_P &   0.13 &  0.49   & -26.5\%  & 0.08 & 0.50  & -14.2\% &  0.06 & 0.5  & -10.2\%\\
+    
+          % MPC\_Z\_VEL\_MAX\_DN &   0.9 &  3.3   & -31.4\% & 0.9 & 3.6 & -2.8\% &  0.6 & 3.9  & -5.7\% \\
+        
+        % 0, 26, 26; 
+        \midrule[0.8pt]
+        {$\frac{I}{V}$},{V} & 
+        \multicolumn{3}{c|}{4.0\%,26} & 
+         \multicolumn{3}{c|}{9.3\%,32} & 
+         \multicolumn{3}{c}{32.2\%,93} \\
+        
+        \bottomrule[1.5pt]
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item[*] 
+\dquote{减少}是相对于原始范围计算的（越小意味着适应性越高），
+\dquote{V} 是范围指南涵盖的已验证配置的数量，
+\dquote{$\frac{I}{V}$} 是范围指导中错误配置的比例（越小意味着稳定性越高）。
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

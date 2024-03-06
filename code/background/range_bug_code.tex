@@ -1,0 +1,20 @@
+\begin{listing}[ht]
+\scriptsize{
+\begin{minted}[linenos, firstnumber=8,breaklines,xleftmargin=2em,numbers=left]{c++}
+//"PSC_VELXY_P", 0.1, 6;
+...
+ConversionInfo angle_and_filt_conversion_info[] = {
+...
+ // PARAMETER_CONVERSION - Added: Jan-2018
+{ Parameters::k_param_pi_vel_xy, 0, AP_PARAM_FLOAT, "PSC_VELXY_P" },
+}
+...
+// convert angle controller gain and filter without scaling
+for (const auto &info : angle_and_filt_conversion_info) {
+    AP_Param::convert_old_parameter(&info, 1.0f);
+}
+\end{minted}
+}
+\caption{参数\param{PSC\_VELXY\_P}使用的代码样例}
+\label{lis:range_bug_code_example}
+\end{listing}

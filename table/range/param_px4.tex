@@ -1,0 +1,82 @@
+\begin{table}[ht]
+\small
+\caption{用于实验的PX4控制程序的参数}
+\label{tab:range_paramall_px4}
+\centering
+\begin{tabular}{ccc}
+        \toprule[1.5pt]
+          Parameter & Range & Default \\
+        \midrule[0.8pt]
+         MC\_ROLL\_P & [0.00, 12.0] & 6.5 \\
+       
+         MC\_PITCH\_P & [0.00, 12.0] & 6.5 \\ 
+       
+         MC\_YAW\_P & [0.00, 5.0] & 2.8 \\ 
+        
+         MC\_YAW\_WEIGHT & [0.00, 1.00] & 0.4 \\ 
+        
+         MPC\_XY\_P & [0.00, 2.00] & 0.9 \\ 
+        
+         MPC\_Z\_P & [0.00, 1.50] & 1.0 \\ 
+        
+         MC\_PITCHRATE\_P & [0.01 0.60] & 0.15 \\ 
+        
+         MC\_ROLLRATE\_P & [0.01, 0.50] & 0.15  \\ 
+        
+         MC\_YAWRATE\_P & [0.00, 0.60] & 0.2 \\ 
+        
+         MPC\_TILTMAX\_AIR & [20.0, 89.0] & 45.0 \\ 
+        
+         MIS\_YAW\_ERR & [0.00, 90.0] & 12.0 \\
+        
+         MPC\_Z\_VEL\_MAX\_DN & [0.5, 4.0] & 1.0 \\
+        
+         MPC\_Z\_VEL\_MAX\_UP & [0.5, 8.0] & 3.0 \\
+        
+         MPC\_TKO\_SPEED & [1.0, 5.0] & 1.5  \\
+        
+        \bottomrule[1.5pt]
+\end{tabular}
+\end{table}
+
+% \begin{table}[ht]
+% \small
+% \caption{Parameters of PX4 control program for experiments.}
+% \label{tab:paramall_px4}
+% \centering
+% \begin{tabular}{cccp{0.55\columnwidth}}
+%         \toprule[1.5pt]
+%           Parameter & Range & Default & Description.\\
+%         \midrule[0.8pt]
+%          MC\_ROLL\_P & [0.00, 12.0] & 6.5 & Roll proportional gain, i.e. desired angular speed in rad/s for error 1 rad.\\
+       
+%          MC\_PITCH\_P & [0.00, 12.0] & 6.5 & Pitch proportional gain, i.e. desired angular speed in rad/s for error 1 rad.\\ 
+       
+%          MC\_YAW\_P & [0.00, 5.0] & 2.8 & Yaw proportional gain, i.e. desired angular speed in rad/s for error 1 rad.\\ 
+        
+%          MC\_YAW\_WEIGHT & [0.00, 1.00] & 0.4 & A fraction [0,1] deprioritizing yaw compared to roll and pitch in non-linear attitude control.\\ 
+        
+%          MPC\_XY\_P & [0.00, 2.00] & 0.9 & Proportional gain for horizontal position error.\\ 
+        
+%          MPC\_Z\_P & [0.00, 1.50] & 1.0 & Proportional gain for vertical position error.\\ 
+        
+%          MC\_PITCHRATE\_P & [0.01 0.60] & 0.15 & Pitch rate proportional gain, i.e. control output for angular speed error 1 rad/s. \\ 
+        
+%          MC\_ROLLRATE\_P & [0.01, 0.50] & 0.15 & Roll rate proportional gain, i.e. control output for angular speed error 1 rad/s. \\ 
+        
+%          MC\_YAWRATE\_P & [0.00, 0.60] & 0.2 & Yaw rate proportional gain, i.e. control output for angular speed error 1 rad/s.\\ 
+        
+%          MPC\_TILTMAX\_AIR & [20.0, 89.0] & 45.0 & Limits maximum tilt in AUTO and POSCTRL modes during flight. \\ 
+        
+%          MIS\_YAW\_ERR & [0.00, 90.0] & 12.0 & Max yaw error in degrees needed for waypoint heading acceptance. \\
+        
+%          MPC\_Z\_VEL\_MAX\_DN & [0.5, 4.0] & 1.0 & Descent velocity in manual modes and offboard. \\
+        
+%          MPC\_Z\_VEL\_MAX\_UP & [0.5, 8.0] & 3.0 & Ascent velocity in manual modes and offboard. \\
+        
+%          MPC\_TKO\_SPEED & [1.0, 5.0] & 1.5 & Takeoff climb rate. \\
+        
+%         \bottomrule[1.5pt]
+% \end{tabular}
+% \end{table}
+

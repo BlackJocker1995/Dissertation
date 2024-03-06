@@ -1,0 +1,95 @@
+
+\begin{table*}[htb]
+\centering
+\begin{minipage}{0.49\linewidth}
+\small
+\caption{用于实验的Ardupilot控制程序的参数}
+\label{tab:range_paramall}
+\centering
+\begin{tabular}{ccc}
+        \toprule[1.5pt]
+         参数 & 官方范围 & 默认值 \\
+        \midrule[0.8pt]
+         PSC\_VELXY\_P & [0.10, 6.00] & 2.0 \\ 
+       
+         PSC\_VELXY\_I & [0.02, 1.00] & 1.0 \\
+       
+         PSC\_VELXY\_D & [0.00, 1.00] & 0.5 \\
+       
+         PSC\_ACCZ\_P & [0.20, 1.50] & 0.5 \\
+       
+         PSC\_ACCZ\_I & [0.00, 3.00] & 1.0 \\
+       
+         ATC\_ANG\_RLL\_P & [3.00, 12.0] & 4.5 \\
+       
+         ATC\_RAT\_RLL\_P &  [0.01, 0.50] & 0.135 \\
+        
+         ATC\_RAT\_PIT\_I & [0.01, 2.00] & 0.135 \\
+        
+         ATC\_RAT\_RLL\_D & [0.00, 0.05] & 0.0036 \\
+        
+         ATC\_ANG\_PIT\_P & [0.00, 12.0] & 4.5 \\
+       
+         ATC\_RAT\_PIT\_P & [0.01, 0.50] & 0.135 \\
+        
+         ATC\_RAT\_PIT\_I & [0.01, 2.0] & 0.135 \\
+        
+         ATC\_RAT\_PIT\_D & [0.00, 0.05] & 0.0036 \\
+       
+         ATC\_ANG\_YAW\_P & [3.00, 12.0] &4.5 \\
+       
+         ATC\_RAT\_YAW\_P & [0.10, 2.50] & 0.18 \\
+       
+         ATC\_RAT\_YAW\_I & [0.01, 1.00]& 0.018 \\
+       
+         ATC\_RAT\_YAW\_D & [0.00, 0.02] & 0 \\
+         
+         WPNAV\_SPEED & [20, 2000] & 500 \\
+       
+          WPNAV\_ACCEL & [50, 500]& 100 \\
+       
+       ANGLE\_MAX & [1000, 8000] & 4500 \\
+        \bottomrule[1.5pt]
+\end{tabular}
+\end{minipage}
+\begin{minipage}{0.49\linewidth}
+\small
+\caption{用于实验的PX4控制程序的参数}
+\label{tab:range_paramall_px4}
+\centering
+\begin{tabular}{ccc}
+        \toprule[1.5pt]
+          参数 & 官方范围 & Default \\
+        \midrule[0.8pt]
+         MC\_ROLL\_P & [0.00, 12.0] & 6.5 \\
+       
+         MC\_PITCH\_P & [0.00, 12.0] & 6.5 \\ 
+       
+         MC\_YAW\_P & [0.00, 5.0] & 2.8 \\ 
+        
+         MC\_YAW\_WEIGHT & [0.00, 1.00] & 0.4 \\ 
+        
+         MPC\_XY\_P & [0.00, 2.00] & 0.9 \\ 
+        
+         MPC\_Z\_P & [0.00, 1.50] & 1.0 \\ 
+        
+         MC\_PITCHRATE\_P & [0.01 0.60] & 0.15 \\ 
+        
+         MC\_ROLLRATE\_P & [0.01, 0.50] & 0.15  \\ 
+        
+         MC\_YAWRATE\_P & [0.00, 0.60] & 0.2 \\ 
+        
+         MPC\_TILTMAX\_AIR & [20.0, 89.0] & 45.0 \\ 
+        
+         MIS\_YAW\_ERR & [0.00, 90.0] & 12.0 \\
+        
+         MPC\_Z\_VEL\_MAX\_DN & [0.5, 4.0] & 1.0 \\
+        
+         MPC\_Z\_VEL\_MAX\_UP & [0.5, 8.0] & 3.0 \\
+        
+         MPC\_TKO\_SPEED & [1.0, 5.0] & 1.5  \\
+        
+        \bottomrule[1.5pt]
+\end{tabular}
+\end{minipage}
+\end{table*}

@@ -1,0 +1,24 @@
+\begin{table}[hbt]
+\caption{不同参数数量错误配置的系统性能}
+\label{tab:fix_rate_diff_param}
+\centering
+\begin{threeparttable}
+\begin{tabular}{c|ccccc}
+        \toprule[1.5pt]
+        \textbf{错误配置更改的参数数量\# } & \textbf{2\#} & \textbf{4\#} & \textbf{8\#} & \textbf{12 or 11\#} & \textbf{17\#} \\
+        
+        \midrule[0.8pt]
+        
+        \tool{Ardupilot} & $\frac{4/4}{100\%}$ & $\frac{16/16}{100\%}$  & $\frac{13/13}{100\%}$ & $\frac{390/430}{90.7\%}$ & $\frac{1047/1184}{88.4\%}$ \\
+
+        \midrule[0.8pt]
+        
+        \tool{PX4} & $\frac{4/4}{100\%}$ & $\frac{22/24}{91.6\%}$   & $\frac{69/74}{93.24\%}$  & $\frac{392/459}{85.4\%}$ & - \\
+        
+        \bottomrule[1.5pt]
+\end{tabular}
+\begin{tablenotes}
+\item \textbf{*} 每个元素为 （整改/总体）/成功率
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

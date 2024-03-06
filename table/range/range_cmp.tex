@@ -1,0 +1,37 @@
+\begin{table*}[htb]
+\caption{范围指南的对比}
+\label{tab:shrink_cmp}
+\centering
+\begin{threeparttable}
+\begin{tabular}{c|cc|cc|cc|cc}
+        \toprule[1.5pt]
+       \multirow{2}{*}{参数}  &   \multicolumn{2}{c|}{\tool{1}}  &  \multicolumn{2}{c|}{\tool{M}}  & \multicolumn{2}{c|}{LGDFuzzer} & \multicolumn{2}{c}{\icsearcher} \\
+        \cmidrule[0.8pt]{2-9}
+        ~  &  {下界}  &  {上界}  &  {下界}  &  {上界}  &  {下界}  &  {上界} & {下界}  &  {上界} \\
+        \midrule[0.8pt]
+         PSC\_VELXY\_P   &  0.1 &  6.0   &  {0.6}  &  6.0  & 1.9 & 4.2 &  0.7  &  4.1 \\
+        
+        INS\_POS1\_Z   &  -4.7 &  5.0   &   {-1} & 4.1  & -0.5 & 2.1 & -0.7 & 0.8  \\
+        
+        INS\_POS2\_Z   &  -5.0 &  5.0   &   -0.7 & 3.2  & -0.7 & 1.2 & -0.8 & 0.7 \\
+        
+        INS\_POS3\_Z   &  -5.0 &  5.0   &   {-0.8} & 3.0  & -0.9 & 3.2 & -0.3 & 0.4 \\
+        
+        WPNAV\_SPEED   &  50 &  2000   &   {300} & 2000 & 50 & 1950 & 300 & 1950 \\
+        
+         ANGLE\_MAX   &  1000 &  8000  &   1000 & 8000  & 1100 &4650 &  1000 & 6850  \\
+        \midrule[0.8pt]
+        {$\frac{I}{V}$},{V} & \multicolumn{2}{c|}{74.8\%,1077} & \multicolumn{2}{c|}{51.4\%,206} & \multicolumn{2}{c|}{28.5\%,14} & \multicolumn{2}{c}{0.0\%,9} \\
+        \bottomrule[1.5pt]
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item[*]
+\tool{1}: 一维变异,
+\tool{M}: 多维编译,
+\dquote{减少}是相对于原始范围计算的（越小意味着适应性越高），
+\dquote{V} 是范围指南涵盖的已验证配置的数量，
+\dquote{$\frac{I}{V}$} 是范围指导中错误配置的比例（越小意味着稳定性越高）。
+\end{tablenotes}
+\end{threeparttable}
+\end{table*}

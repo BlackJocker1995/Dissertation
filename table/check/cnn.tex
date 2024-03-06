@@ -1,0 +1,22 @@
+\begin{table}[ht]
+\caption{不同特征方式下物理安全事件检测的平均性能指标}
+\label{tab:cross_cnn}
+\centering
+\begin{tabular}{c|c|ccc}
+        \toprule[1.5pt]
+        {特征} & {类别}  & {Precision} & {Recall} & {F1-Score}  \\
+        \midrule[0.8pt]
+        \multirow{3}{*}{使用不变量} & 轻微碰撞 & 98.20\% &   91.09\%  &  94.51\% \\
+        
+        & 正常飞行  & 92.02\%  &  99.58\%   & 95.65\% \\
+        
+        & 阵风晃动  & 97.38\%  &  86.67\% &   91.71\% \\
+        \midrule[0.8pt]
+        \multirow{3}{*}{不使用不变量} & 轻微碰撞 & 96.51\% &   92.48\%  &  94.45\% \\
+        
+        & 正常飞行  & 82.91\%  &  99.98\%   & 90.66\% \\
+        
+        & 阵风晃动  & 98.76\%  &  79.33\% &   87.99\% \\
+        \bottomrule[1.5pt]
+\end{tabular}
+\end{table}

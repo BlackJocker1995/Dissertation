@@ -1,0 +1,42 @@
+\begin{table}[ht]
+\caption{\tool{LGDFuzzer}配置搜索结果}
+\label{tab:fix_lgd}
+\centering
+\begin{threeparttable}
+\begin{tabular}{c|c|c|cccc}
+        \toprule[1.5pt]
+        ~ & 配置中参数个数  & 总计 & 轨迹偏航 & 潜在动力损失 & 飞行冻结 & 飞行坠毁\\
+        
+        \midrule[0.8pt]
+        
+        \multirow{6}{*}{{Ardupilot}} &2 & 32 & 4 & 0 & 28 & 0 \\
+
+        ~ & 4 & 149  & 9  & 10 & 129 & 1 \\
+        
+        ~ & 8 & 163  & 7 & 10 & 144 & 2 \\
+    
+        ~ & 12  & 340 & 19 & 9 & 310 & 2  \\
+        
+        ~ & 16  & 805 & 100 & 308 & 393 & 4  \\
+        
+        ~ & 20  & 1511 & 910 & 518 & 70 & 13  \\
+        
+        \midrule[0.8pt]
+        
+        \multirow{5}{*}{{PX4}} & 2 & 16 & 16 & - & 0 & 0 \\
+        
+        ~ & 4 & 26 & 19 & - & 0 & 0 \\
+        
+         ~ & 8 & 122  & 70  & - & 47 & 5 \\
+        
+        ~ & 12 & 133  & 61 & - & 56 & 16 \\
+    
+        ~ & 14  & 258 & 155  & - & 82 & 21  \\
+        \bottomrule[1.5pt]
+\end{tabular}
+% \begin{tablenotes}
+% \footnotesize
+
+% \end{tablenotes}
+\end{threeparttable}
+\end{table}

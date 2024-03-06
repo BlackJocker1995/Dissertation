@@ -1,0 +1,34 @@
+\begin{table}[ht]
+\caption{\nyctea 的整改结果}
+\label{tab:fix_repair}
+\centering
+\begin{threeparttable}
+\begin{tabular}{c|c|ccc}
+        \toprule[1.5pt]
+        ~ & 错误类型 &  整改 （成功率） &  失败 & ANC \\
+        
+        \midrule[0.8pt]
+        
+        \multirow{4}{*}{\tool{Ardupilot}} & 总计  &  1,784 (90.74\%)  & 178 & 4.32 \\
+        \cmidrule{2-5}
+        ~ & 执行器相关  &  637 (89.46\%)  & 75 & 4.43 \\
+        
+        ~ & 任务执行 & 857 (92.15\%)  & 73 & 4.23 \\
+
+        ~ & 系统故障保护  & 290  (90.62\%)    & 30 & 4.30 \\
+    
+        
+        \midrule[0.8pt]
+        
+         \multirow{4}{*}{\tool{PX4}} & 总计 & 1,080 (89.45\%)   &  139  & 4.57 \\
+         \cmidrule{2-5}
+         ~ & 执行器相关 & 280 (90.03\%)   &  31  & 4.55 \\
+
+        ~ & 任务执行  & 694 (87.73\%)     & 97 & 4.54 \\
+
+        ~ & 系统故障保护  & 106 (90.59\%)    & 11  & 4.62 \\
+        
+        \bottomrule[1.5pt]
+\end{tabular}
+\end{threeparttable}
+\end{table}

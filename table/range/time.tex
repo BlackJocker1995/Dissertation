@@ -1,0 +1,21 @@
+\begin{table}[ht]
+\small
+\caption{不同工具的时间消耗}
+\label{tab:range_time}
+\centering
+\begin{tabular}{c|ccccc}
+        \toprule[1.5pt]
+         
+         
+         \multirow{2}{*}{工具} & \multirow{2}{*}{预训练} & \multirow{2}{*}{搜素} & 验证  & \multirow{2}{*}{总计} \\
+         & & & (6线程) & \\
+        \midrule[0.8pt]
+          RVFuzzer & - & 126分钟 & - & 126分钟 \\
+  
+          LGDFuzzer & 700秒 & 156秒 & 33分钟 &  47分钟 \\
+
+          \icsearcher & 703秒 & 241秒 & 35分钟 &  50分钟  \\
+        
+        \bottomrule[1.5pt]
+\end{tabular}
+\end{table}

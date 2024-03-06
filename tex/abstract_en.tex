@@ -1,0 +1,91 @@
+%% 无人机总体背景
+With the continual advancement of aviation technology and the advent of the digital age, unmanned aerial vehicles (UAVs) have emerged as a type of aircraft that operates without the need for onboard personnel to manipulate.
+Since their no online pilots requirements,  small size, and high speed, UAVs are often utilized to carry out tasks that are difficult to reach or involve high human labor costs.
+However, due to constraints in miniaturization, the computational capabilities of UAVs hardware and the reliability of software design can not be equated with those of traditional aircraft. 
+Particularly at the system design level, the absence of unified standards among different systems, coupled with the lack of safeguard mechanisms, results in an inadequate reliability at the system design level, harboring certain design vulnerability. 
+These vulnerability impact various functional modules of UAVs, causing these modules to deviate from their original design intent during actual operation. 
+Such design vulnerability may impede the execution of UAV tasks in specific scenarios, configurations, or environments, potentially leading to equipment damage. 
+Therefore, ensuring the reliability of UAV systems holds paramount significance.
+
+%% 说明不可靠，存在的问题
+In responding to the aforementioned issues, this paper integrates artificial intelligence technologies to tackle three reliability-affecting challenges prevalent in current UAV system designs. 
+Corresponding research has been conducted to offer solutions to these challenges. 
+The research problems encompass issues within the UAV safety check module, UAV parameter configuration module, and recovery under unstable states.
+The specific research outcomes are as follows:
+
+
+\begin{enumerate}
+    \item The UAV relies on a safety check module to identify unsafe conditions such as tilting and thrust loss. 
+    It utilizes conditional rules to validate specific dynamic values within the system to indicate the occurrence of unsafe conditions, thereby triggering corresponding remedial measures.
+    For instance, increasing the motor speed in the event of thrust loss to provide more power. However, more complex unsafe events (such as gusts of wind and minor collisions) can impact the judgment of the safety module, leading to the risks of missed reports and false alarms, resulting in personal injury, property damage, or hardware failure.
+    
+    
+    In response to the limited capability of UAV' safety check modules to handle complex unsafe events, the paper introduces an auxiliary check module to enhance the judgment capabilities of the original system. 
+    This module combines the changing attributes of UAV flight states and machine learning techniques to establish an invariant state predictor for predicting future flight state changes. The auxiliary check module utilizes this predictor to create feature descriptions for flight data. 
+    Ultimately, the auxiliary check module employs an applicable identifier to detect these complex unsafe events and formulate corresponding correct response strategies. 
+    The newly integrated auxiliary component can complement neglected events that the UAV module failed to detect and reduce false alarms caused by the original detection system being overly sensitive.
+    Tested under popular UAV flight control systems, the results demonstrate that this approach increases accuracy from 2\% to 81\% in handling neglected events and reduces false alarms from 44\% to 6\% in over sensitive events.
+
+    \item Developers and manufacturers provide configurable control parameters for flight control programs to support various environments and missions, along with recommended ranges for these parameters to ensure flight safety.
+    However, this flexible mechanism can also introduce a vulnerability known as Range Specification Bugs. Even if each parameter in the configuration is set within the official recommended range, the combination of parameter values may still affect the physical stability of the UAV, leading to issues such as crashes, freeze flight, and trajectory deviation.
+    
+    Addressing vulnerabilities in the UAV system's parameter configuration mechanism, specifically Range Specification Bugs, this paper presents a learning-guided fuzzing test approach to uncover such vulnerabilities,  which iteratively tests configurations likely to trigger the vulnerability and proposes more reasonable recommended ranges to eliminate these configurations.
+    It employs a metaheuristic fuzzing test approach to search for these configurations. Particularly noteworthy is the utilization of a machine learning predictor to assess configurations during the search process. 
+    This reduces the number of execution validations in fuzzing, thereby enhancing search efficiency. 
+    Tested under popular UAV flight control systems, the results demonstrate the system's successful identification of potential incorrect configurations, with over 94\% confirmed through flight validation as genuine occurrences.
+
+    \item Affected by range specification errors, the UAV's attitude may exhibit anomalies during flight. 
+    This manifests as increasing flight data errors and difficult-to-correct attitude oscillations. The aforementioned fuzzing test approach addresses pre-flight configuration issues. 
+    However, it is unable to handle configuration changes during flight and the effects of active attacks.
+    
+   In response to the issue of unstable UAV attitude caused by attacks during flight or incorrect configurations being uploaded, this paper presents an automated real-time detection and online rectification solution. 
+   This enables UAV to self-adjust their flight stability, addressing configuration changes or external active attacks during flight.
+    The solution operates by monitoring deviation data (the variance between actual flight states and expected flight states) to assess the UAV's stability. 
+    Upon detecting instability, the solution promptly invokes a pre-trained intelligent model to generate appropriate corrections, reconfiguring the UAV to prevent it from entering an uncontrollable state.
+    Tested under prevalent UAV flight control systems, the results indicate that the approach successfully eliminates 85\% of unstable flight instances in the experiments.
+    
+\end{enumerate}
+
+% %External interaction data is prone to anomalies, leading to erroneous flight states, while internal system defects directly impact flight stability and safety. 
+% Therefore, this study, from the perspective of UAV system design, investigates mechanisms to enhance the safety and reliability of UAV systems, aiming to improve the robustness of UAV flight processes.
+% The enhancement approach primarily focuses on the safety and reliability of UAVs from three perspectives: 
+% insufficient system safety check modules, inadequate system logic design, and insufficient system online response capabilities. 
+% In response, this article introduces three modules (\deccheck, \icsearcher, \nyctea) designed to address the corresponding issues. 
+% These modules include (1) \dquote{UAV Reliable Flight Safety Module} to address design flaws in the UAV's safety check mechanism; 
+% (2) \dquote{UAV Parameter Configuration Vulnerability Discovery} to tackle design flaws in the UAV system's configuration logic;
+% (3) \dquote{UAV Error Control Parameter Correction} to detect and rectify flight control parameter errors during UAV missions.
+% The research results of the specific descriptions are as follows:
+
+% UAVs rely on a safety check system to identify unsafe flights.
+% Their check module implementation typically adopts liner condition rules to validate specific internal monitored values.
+% However, such safety check modules cannot handle complex unsafe events. 
+% They will lead to misses and false alarms that may cause personal injury, property loss, or hardware damage.
+% This sub-research proposes a novel safety auxiliary check system called \deccheck that can mitigate the consequences by utilizing state invariant and machine learning techniques.
+% Specifically, state invariant is a special predictor to describe constraints of future changing states.
+% Any deviation between the actual state and invariant estimation can be used to describe the abnormal pattern.
+% \deccheck applies state invariant to create feature descriptions for the events of UAVs and utilizes a machine learning-based detector to identify unsafe events that bias from invariant estimations.
+% Then, the state invariant-based detector is integrated into the control program of UAVs to assist in the safety check system.
+% The newly integrated detector can identify missing events that the system check fails to detect and mitigate incorrect warnings caused by false alarms.
+% For a popular UAV control program, \tool{ArduPilot}, our system increases the accuracy from 2\% to 81\% when handling missing events.
+% It reduces the false positive rate from 44\% to 6\% when processing false alarms.
+
+% Developers and manufacturers provide configurable control parameters for flight control programs to support various environments and missions, along with suggested ranges for these parameters to ensure flight safety. 
+% However, this flexible mechanism can also introduce a vulnerability known as range specification bugs.
+% The vulnerability originates from the evidence that certain combinations of parameter values may affect the UAV's physical stability even though its parameters are within the suggested range.
+% The paper introduces a novel module called \icsearcher, which is designed to identify incorrect configurations or unreasonable combinations of parameters and suggest more reasonable ranges for these parameters.
+% \icsearcher applies a metaheuristic search algorithm to find configurations with a high probability of driving the UAV into unstable states.
+% In particular, \icsearcher adopts a machine learning-based predictor to assist the searcher in evaluating the fitness of configuration.
+% Finally, leveraging searched incorrect configurations, \icsearcher can summarize the feasible ranges through multi-objective optimization.
+% \icsearcher applies a predictor to guide the search, which eliminates the need for realistic/simulation executions when evaluating configurations and further promotes search efficiency.
+% This paper has carried out experimental evaluations of \icsearcher in different control programs.
+% The evaluation results show that the system successfully reports potentially incorrect configurations, of which over $94\%$ leads to unstable states.
+
+% During the flight of UAVs, the onboard control system regularly receives the current physical state and sensor measurement data to adjust flight and maintain stability.
+% Configuration errors above indicate that configuration mistakes may impact this process, leading to unstable physical states, rendering UAV flight unpredictable, and potentially causing complete loss of control.
+% While most current research, including \icsearcher, effectively identifies this phenomenon, it fails to provide flexible corrective measures without interrupting mission execution. 
+% Based on the \icsearcher module, this paper introduces an additional automated real-time detection and correction module, \nyctea, enabling UAVs to self-adjust their flight stability.
+% This module predicts potential instability by observing deviation data (the gap between actual and expected flight states) rather than correcting the UAV after it has lost control. 
+% \nyctea continuously monitors state changes within consecutive intervals, calculating overall deviations to determine if the UAV is transitioning from instability to loss of control.
+% Upon detecting instability, \nyctea promptly invokes a pre-trained intelligent agent to generate appropriate configurations and reconfigure the UAV to prevent loss of control. 
+% This reconfiguration process iterates until instability is eliminated.
+% Experiments testing \nyctea on \tool{Ardupilot} and \tool{PX4} demonstrate that it successfully mitigated 85\% of instability caused by configuration errors.

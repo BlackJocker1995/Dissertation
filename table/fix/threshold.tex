@@ -1,0 +1,19 @@
+\begin{table}[ht]
+\caption{不同类型段偏差值}
+\label{tab:fix_threshold}
+\centering
+\begin{tabular}{c|c|ccc|c}
+        \toprule[1.5pt]
+        {程序} & {类型} & {最小值} & {最大值} & {均值} & $TH$ \\
+        \midrule[0.8pt]
+        \multirow{2}*{\tool{Ardupilot}} & 安全 & 0.03 & 17.41 & 1.73 &  \multirow{2}*{22.24}\\
+        
+        ~ & 错误配置 & 3.22 & 318.41 & 42.76 \\
+        \midrule[0.8pt]
+         \multirow{2}*{\tool{PX4}} & 安全 & 0.04 & 15.46 & 1.53 &  \multirow{2}*{17.85} \\
+        
+        ~ & 错误配置 & 2.41 & 305.45 & 34.18\\
+    
+        \bottomrule[1.5pt]
+\end{tabular}
+\end{table}

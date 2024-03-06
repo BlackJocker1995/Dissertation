@@ -1,0 +1,17 @@
+\begin{table}[ht]
+\caption{不同车辆模型的预测精度}
+\label{tab:fix_vehicle}
+\centering
+\begin{tabular}{c|cccc}
+        \toprule[1.5pt]
+        {预测器训练数据来源} & {\shortstack{Gazebo \\ (Ardupilot)}} &  {\shortstack{ZD550 \\ (Ardupilot)}} & {\shortstack{Gazebo \\ (PX4)}} & {\shortstack{ZD550 \\ (PX4)}}   \\
+        \midrule[0.8pt]
+        APM数据   & \multirow{2}{*}{96.88\%} & \multirow{2}{*}{95.56\%} & \multirow{2}{*}{74.68\%}  & \multirow{2}{*}{73.21\%}  \\
+        (Ardupilot) & & & & \\
+        \midrule[0.8pt]
+        Jmavsim数据 & \multirow{2}{*}{68.33\%} & \multirow{2}{*}{69.98\%} & \multirow{2}{*}{96.95\%}  & \multirow{2}{*}{96.26\%}  \\
+        (PX4) & & & & \\
+        
+        \bottomrule[1.5pt]
+\end{tabular}
+\end{table}

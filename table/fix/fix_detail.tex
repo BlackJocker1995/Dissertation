@@ -1,0 +1,47 @@
+\begin{table*}[htb]
+\caption{整改结果分布}
+\label{tab:fix_repair_detial}
+\centering
+\begin{threeparttable}
+\begin{tabular}{c|c|cc|cc|cc|cc}
+        \toprule[1.5pt]
+        ~ & \multirow{2}{*}{\textbf{数}} & \multicolumn{8}{c}{{分布  \{修复/总计 | 成功率 \}}} \\
+        \cmidrule{3-10}
+        ~ & ~ &  \multicolumn{2}{c|}{{轨迹偏航}} & \multicolumn{2}{c|}{{推力损失}} & \multicolumn{2}{c|}{{飞行冻结}} & \multicolumn{2}{c}{{飞行坠毁}} \\
+        
+        \midrule[0.8pt]
+        
+        \multirow{6}{*}{\textbf{Ardu}} & 2   & 4/4 & 100\% & 0/0 &/& 27/28 & 96.4\% & 0/0 &/\\
+
+        ~ & 4    & 8/9 & 88.8\% & 0/0 &/& 128/139 & 92.1\% & 1/1 & 100\%\\
+        
+        ~ & 8    & 7/7 & 100\% & 5/10 & 50.0\% & 135/144 & 93.7\% & 1/2 & 50.0\%  \\
+    
+        ~ & 12   & 16/19 & 84.2\% & 4/9 & 44.4\% & 258/310 & 83.2\% &  2/2 & 100\%\\
+        
+        ~ & 16 &  50/100 & 50.0\% & 98/308 & 31.8\% & 251/393 & 63.8\% & 4/4 & 100\%\\
+        
+        ~ & 20  & 255/910 & 28.0\% & 92/518 & 17.8\% & 24/70 & 34.3\% & 5/13 & 38.4\%\\
+        
+        \midrule[0.8pt]
+        
+         \multirow{5}{*}{{PX4}} & 2 & 13/16 & 81.3\% & \multicolumn{2}{c|}{-} & 0/0 &/& 0/0 &/\\
+         
+         ~ & 4  & 19/26 & 73.1\% & \multicolumn{2}{c|}{-} & 0/0 &/& 0/0 &/\\
+
+        ~ & 8   &  55/70 & 78.5\% & \multicolumn{2}{c|}{-} & 7/47 & 14.8\% & 3/5 & 60.0\%\\
+        
+        ~ & 12    & 31/61 & 50.8\% & \multicolumn{2}{c|}{-} & 19/56 & 33.9\% & 5/16 & 31.25\%  \\
+
+        ~ & 14    & 72/155 & 46.4\% & \multicolumn{2}{c|}{-} & 26/82 & 31.7\% &  2/21 & 9.5\%\\
+
+        \bottomrule[1.5pt]
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item[*] 
+\textbf{数} 是参与配置构成的参数的数量；
+\textbf{Ardu}是\tool{Ardupilot}飞行控制程序
+\end{tablenotes}
+\end{threeparttable}
+\end{table*}

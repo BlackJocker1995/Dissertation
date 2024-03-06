@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\caption{Ardupilot官方源代码中的崩溃和推力损失触发条件}
+\label{tab:condition}
+\centering
+\begin{tabular}{c|c|c}
+        \toprule[1.5pt]
+        \textbf{检查模块} & \multicolumn{2}{c}{\textbf{触发条件}} \\
+        \midrule[0.8pt]
+        \multirow{2}{*}{崩溃} & 加速度 $ < 3m/s$  &  倾斜角 $ > 15 deg$ \\
+        \cmidrule[0.8pt]{2-3}
+          & 角度错误 $ > 30 deg$  &  加速度 $ < 10m/s$  \\
+        \midrule[0.8pt]
+        \multirow{2}{*}{动力损失} & 期望角 $ > 15 deg$  &  Z轴速度为负 \\
+        \cmidrule[0.8pt]{2-3}
+          & 角度错误 $ > 30 度$  &  油门饱和  \\
+        \bottomrule[1.5pt]
+\end{tabular}
+\end{table}

@@ -1,0 +1,52 @@
+\SetAlFnt{\small}
+\begin{algorithm}[htb]
+\caption{训练流程}\label{alg:fix_system}
+ \LinesNumbered
+ \KwIn{
+训练批量尺寸 $N$, 软更新因子 $\tau$, 贴现系数 $\gamma$,
+ 不正确配置集 $ICs$, 偏差阈值 $TH$
+ \;
+ }
+ 初始Critic网络 $Q(\cdot)$, $Q'(\cdot)$\ 包含权重 $\theta^{Q}$, $\theta^{Q'}$\;
+ 初始Actor网络 $\mu(\cdot)$ and $\mu'(\cdot)$ 包含权重 $\theta^{\mu}$, $\theta^{\mu'}$\;
+ 最初, $\theta^{Q'} \gets \theta^{Q}$, $\theta^{\mu'} \gets \theta^{\mu}$\;
+ 重播缓冲区 $R$\;
+ 
+\For{$ic_{k}$ in $ICs$}{
+    初始化飞行场景 $ic_{k}$ 并启动\;
+    \For{时间戳 $i$ in  执行（$ic_{k}$）}{
+      观察一个片段 $S_t$\;
+      计算偏差 $Dv_t$\;
+      \If{$Dv_t < TH$}{
+        continue;
+      }
+
+      
+      选择动作 $c_t \gets \mu(S_t)$\;
+      $S_{next}$, $r_t$ $\gets$ 执行动作 $c_t$\;
+      存储元组 $(S_t, c_t, r_t, S_{next})$ in $R$\;
+    
+      
+      \If{$length(R) < N$}{
+        continue;
+      }
+      随机批量 $N$ 个转换元组 $(S_j, c_j, r_j, S_{(j,next)}), j \in N$ from $R$\;
+    
+      计算 $y_j = r_t + \gamma Q'(r_j, \mu'(S_{(j,next)})$\
+      
+      通过最小化损失来更新批评家 (\ref{eq:loss})\;
+      %$$L = \frac{1}{N}\sum_{j}(y_j - Q(S_j, c_j))^2$$\
+
+      使用采样的策略梯度更新参与者策略 (\ref{eq:policy})\;
+
+      % $$\nabla_{\theta^{\mu}} \approx \frac{1}{N} \sum_{j}\nabla_{c}Q(S,c)\mid_{S=S_j, c=\mu(S_j)}\nabla_{\theta^{\mu}}\mu(S)\mid_{S_j}$$
+
+      更新网络 (\ref{eq:sigma})\;
+      % $$\theta^{Q'} \gets \tau \theta^{Q} + (1-\tau)\theta^{Q'}$$
+      % $$\theta^{\mu'} \gets \tau \theta^{\mu} + (1-\tau)\theta^{\mu'}$$
+      
+     }
+}
+
+ 
+\end{algorithm}

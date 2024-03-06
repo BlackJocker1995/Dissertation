@@ -1,0 +1,22 @@
+\begin{table}[ht]
+\caption{不安全事件影响下无人机出现的错误信息}
+\label{tab:check_crash_err}
+\centering
+\begin{threeparttable}
+\begin{tabular}{c|c|c|c|c|c}
+        \toprule[1.5pt]
+        \multirow{2}{*}{不安全事件} & \multirow{2}{*}{安全检查错误} & \multicolumn{4}{c}{其他系统错误}\\
+        \cline{3-6}
+          &  & GPS故障 & 潜在不良姿态 & 潜在失控安全 & 过度震动补偿  \\
+        \midrule[0.8pt]
+         100~轻微碰撞 & 2 坠毁 & 88 & 89 & 89 & 12  \\
+         
+         100~阵风晃动 & 44 动力损失 & 1 & 1 & 1 & \diagbox{}{}  \\
+        \bottomrule[1.5pt]
+\end{tabular}
+% \begin{tablenotes}
+% \footnotesize
+% \item[*] \textbf{G}: GPS故障； \textbf{B}: 不良差异（姿态估计不良）; \textbf{F}: 触发失控安全;  \textbf{E}: 激活了过度振动补偿
+% \end{tablenotes}
+\end{threeparttable}
+\end{table}

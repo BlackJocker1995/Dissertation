@@ -1,0 +1,35 @@
+\begin{table*}[tb]
+\caption{与最先进研究的比较}
+\label{tab:cmp_other}
+\centering
+\begin{threeparttable}
+\begin{tabular}{c|ccccccc}
+        \toprule[1.5pt]
+    
+           & {问题源} & {修复手段} & {\makecell*[c]{在线 \\ 支持}} & {\makecell*[c]{需要 \\ 预训练}}  &  {\makecell*[c]{彻底 \\ 修复}} &{\makecell*[c]{无代码 \\ 插入} }  & {\makecell*[c]{无任务 \\ 限制} } \\
+        \midrule[0.8pt]
+        
+          \nyctea & 内与外 & 补丁 & \ding{51} & \ding{51}  & \ding{55} & \ding{51} &  \ding{51}  \\
+
+          \tool{LGDFuzzr}~\cite{han2022control} & 内与外 & 限制 & \ding{55} & \ding{51} & \ding{55}  & \ding{51} &  \ding{55} \\
+
+          \tool{RVFuzzr}~\cite{rvfuzzer} & 内与外 & 限制 & \ding{55} & \ding{51} & \ding{55} & \ding{51} &  \ding{55}  \\
+
+          \tool{DisPatch}~\cite{kim2022reverse} & 内部 & 补丁 & \ding{55} & \ding{55} &  \ding{51} & \ding{55} & \ding{51} \\
+
+          \tool{Avis}~\cite{taylor2021avis} & 内部 & 补丁 & \ding{55} & \ding{55} & \ding{51} & \ding{55} &  \ding{51}  \\
+            
+          \tool{PID-Piper}~\cite{dash2021pid} & 外部 & 冗余 & \ding{51} & \ding{51} & \ding{55} & \ding{55} &  \ding{51}  \\
+
+          \tool{Soft-sensors}~\cite{choi2020software} & 外部 & 冗余 & \ding{51} & \ding{51} & \ding{55} & \ding{55} &  \ding{51}  \\
+
+      
+        \bottomrule[1.5pt]
+\end{tabular}
+% \begin{tablenotes}
+% \footnotesize
+% \item[*] {Int} is internal. 
+% {Exter} is exterinal.
+% \end{tablenotes}
+\end{threeparttable}
+\end{table*}

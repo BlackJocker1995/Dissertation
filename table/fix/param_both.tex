@@ -1,0 +1,54 @@
+% \begin{table}[ht]
+% \small
+% \caption{Parameters for experiments.}
+% \label{tab:param_both}
+% \centering
+% \begin{tabular}{c|c}
+%         \toprule[1.5pt]
+%         \textbf{Ardupilot} & \textbf{PX4}\\
+%         \midrule[0.8pt]
+%     \makecell*[c]{PSC\_VELXY\_P\\PSC\_VELXY\_I\\PSC\_VELXY\_D\\PSC\_ACCZ\_P\\PSC\_ACCZ\_I\\ATC\_ANG\_RLL\_P\\ATC\_RAT\_RLL\_P\\ATC\_RAT\_PIT\_I\\ATC\_RAT\_RLL\_D\\ATC\_ANG\_PIT\_P\\ATC\_RAT\_PIT\_P\\ATC\_RAT\_PIT\_I\\ATC\_RAT\_PIT\_D\\ATC\_ANG\_YAW\_P\\ATC\_RAT\_YAW\_P\\ATC\_RAT\_YAW\_I\\ATC\_RAT\_YAW\_D\\} 
+%     & 
+%     \makecell*[c]{ MC\_ROLL\_P\\MC\_PITCH\_P\\MC\_YAW\_P\\MC\_YAW\_WEIGHT\\MPC\_XY\_P\\MPC\_Z\_P\\MC\_PITCHRATE\_P\\MC\_ROLLRATE\_P\\MC\_YAWRATE\_P\\MPC\_TILTMAX\_AIR\\MPC\_TKO\_SPEED} \\
+%     \bottomrule[1.5pt]
+% \end{tabular}
+% \end{table}
+
+\begin{table}[ht]
+\small
+\caption{实验参数}
+\label{tab:fix_param_both}
+\centering
+\begin{tabular}{c|c|c}
+\toprule[1.5pt]
+\textbf{参数描述}      & \textbf{Ardupilot} & \textbf{PX4}          \\ 
+\midrule[0.8pt]
+Roll angle P gain         & ATC\_ANG\_RLL\_P   & MC\_ROLL\_P           \\ \hline
+Pitch angle P gain        & ATC\_ANG\_PIT\_P   & MC\_PITCH\_P          \\ \hline
+Yaw angle P gain          & ATC\_ANG\_YAW\_P   & MC\_YAW\_P            \\ \hline
+Roll rate P gain          & ATC\_RAT\_RLL\_P   & MC\_ROLLRATE\_P       \\ \hline
+Pitch rate P gain         & ATC\_RAT\_PIT\_P   & MC\_PITCHRATE\_P      \\ \hline
+Yaw rate P gain           & ATC\_RAT\_YAW\_P   & MC\_YAWRATE\_P        \\ \hline
+Roll rate I gain          & ATC\_RAT\_RLL\_I   &                       \\ \hline
+Roll rate D gain          & ATC\_RAT\_RLL\_D   &                       \\ \hline
+Pitch rate I gain         & ATC\_RAT\_PIT\_I   &                       \\ \hline
+Pitch rate D gain         & ATC\_RAT\_PIT\_D   &                       \\ \hline
+Yaw rate I gain           & ATC\_RAT\_YAW\_I   &                       \\ \hline
+Yaw rate D gain           & ATC\_RAT\_YAW\_D   &                       \\ \hline
+Velocity P gain           & PSC\_VELXY\_P      &                        \\ \hline
+Velocity I gain           & PSC\_VELXY\_I      &                        \\ \hline
+Velocity D gain           & PSC\_VELXY\_D      &                        \\ \hline
+Acceleration P gain.      & PSC\_ACCZ\_P       &                        \\ \hline
+Acceleration P gain.      & PSC\_ACCZ\_I       &                        \\ \hline
+Yaw weight                &                    & MC\_YAW\_WEIGHT       \\ \hline
+Horizontal error gain     &                    & MPC\_XY\_P            \\ \hline
+Vertical error gain       &                    & MPC\_Z\_P             \\ \hline
+Maximum tilt angle        &                    & MPC\_TILTMAX\_AIR     \\ \hline
+Takeoff climb rate        &                    & MPC\_TKO\_SPEED       \\ 
+\bottomrule[1.5pt]
+\end{tabular}
+\end{table}
+
+
+
+       

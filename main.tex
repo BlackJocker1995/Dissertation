@@ -1,0 +1,72 @@
+\documentclass{xdupgthesis}
+\input{header}
+\xdusetup{
+style / cjk-font = fandol,
+style / latin-font = gyre,
+style / bib-backend = bibtex,
+style / customize-edubg = true,
+style / customize-resresult = true,
+% 信息
+info / title = {基于人工智能的无人机系统可靠性技术研究},
+info / title* = {Ensuring Reliable of UAVs system through Artificial Intelligence},
+info / author = {韩瑞冬},
+info / author* = {Ruidong Han},
+info / supervisor = {马卓},
+info / supervisor* = {Zhuo Ma},
+info / supervisor-title = {教授},
+info / supervisor-title* = {Professor},
+info / supervisor-enterprise = {西安电子科技大学},
+info / supervisor-enterprise* = {Xidian University},
+info / degree = {工学博士},
+info / graduate-type = {博士},
+info / degree-type = {学术},
+info / major = {网络空间安全},
+info / major* = {Cyber Security},
+info / sub-major = {网络空间安全},
+info / department = {网络与信息安全学院},
+info / student-id = {20151110321},
+info / abstract = {tex/abstract.tex},
+info / abstract* = {tex/abstract_en.tex},
+info / keywords = {无人机系统可靠性， 模糊测试，在线检测，机器学习预测， 深度强化学习},
+info / keywords* = {Unmanned aerial systems security, Fuzzy test, Online detection, Machine learning prediction, Deep reinforcement learning},
+% 符号表
+info / los =  {table/los.tex},
+% style/customize-los = false,
+% 缩略语
+info / loa =  {table/loa.tex},
+% 引用
+info / bib-resource = {ref.bib},
+% 个人简介
+info / bio = {tex/bio.tex},
+% 致谢
+info/acknowledgements = {tex/acknowledgements.tex}
+}
+
+
+\begin{document}
+
+\frontmatter
+
+\mainmatter
+
+\chapter{绪论}
+\input{tex/introduction.tex}
+
+\chapter{预备知识}
+\input{tex/background.tex}
+
+\chapter{不变量验证的可靠安全检查方案}
+\input{tex/check_bug.tex}
+
+\chapter{模型预测的可靠参数配置方案}
+\input{tex/range_bug.tex}
+
+\chapter{强化学习的可靠在线修复方案}
+\input{tex/fix_bug.tex}
+
+\chapter{总结与展望}
+\input{tex/summary.tex}
+
+\backmatter
+
+\end{document}

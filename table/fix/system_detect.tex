@@ -1,0 +1,20 @@
+\begin{table}[ht]
+\caption{不稳定执行的检测结果}
+\label{tab:fix_system_detection}
+\small
+\centering
+\begin{threeparttable}
+\begin{tabular}{c|ccc|ccc}
+        \toprule[1.5pt]
+
+         &  识别 & 修正 & 错失 & Precision & Recall & F1-Score\\
+        
+        \midrule[0.8pt]
+        
+        \tool{Ardupilot} & 1,964 & 1,962 & 17& 99.89\%  & 99.14\% &  99.51\%   \\
+        \tool{PX4}  & 1,222 & 1,219 & 15 &99.75\% & 98.78\% &  98.76\%  \\
+        
+        \bottomrule[1.5pt]
+\end{tabular}
+\end{threeparttable}
+\end{table}
